@@ -181,8 +181,8 @@ async function main() {
     try {
         await run();
     } catch (error) {
+        core.setOutput("error_message", "test");
         const error_message = getErrorMessage(error);
-        core.setOutput("error_message", SEMVER_CHECKS_OUTPUT);
         core.setFailed(error_message);
     }
 }
